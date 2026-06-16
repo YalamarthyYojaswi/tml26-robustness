@@ -1,0 +1,13 @@
+universe = docker
+docker_image = pytorch/pytorch:2.3.1-cuda12.1-cudnn8-devel
+executable = /home/atml_team024/tml26_task3/submit_model.sh
+output = runlogs/submit.$(ClusterId).$(ProcId).out
+error  = runlogs/submit.$(ClusterId).$(ProcId).err
+log    = runlogs/submit.$(ClusterId).log
+request_GPUs = 0
+request_CPUs = 1
+request_memory = 2G
+requirements = UidDomain == "cs.uni-saarland.de"
++WantGPUHomeMounted = true
++WantScratchMounted = true
+queue 1
